@@ -509,3 +509,227 @@ for(var i = 0; i < buttons.length; i++) {
   var button = buttons[i];
   addClickListener(button);
 }
+
+
+
+////////////JSONP///////////////
+
+// файл data.js
+// который придет после запроса от сервера
+
+window.__jsonpCallback([
+  { "name": 'object'},
+  { "name": 'object'},
+  { "name": 'object'}
+]);
+
+//файл main.js который отправляет на сервер запрос
+
+//ф-ция для отрисовки пришедших данных на странице
+var renderItem = function(item) {
+  var dataDiv = document.createElement('div');
+  dataDiv.textContent = item.name;
+  document.body.appendChild(dataDiv);
+};
+
+//тут описаны действия ф-ции когда придет инфа с сервера
+window.__jsonpCallback = function(data) {
+  for(var i = 0; i < data.lenght; i++) {
+    renderItem(data[i]);
+  }
+};
+
+//здесь рисуется тег script на странице, который сделает запрос
+var loader = document.createElement('script');
+loader.src = 'data.js';
+document.body.append(loader);
+
+//https://javascript.pages.academy/code-and-magick/data?callbakc=helloChat
+//? = метод GET, callback= - название функции, которую мы передаем
+
+
+
+
+//////XMLHttpRequest//////////////////
+
+var xhr = new XMLHttpRequest();
+
+console.log(xhr);
+
+// ставим обрабодчик до отправления, так как ответ от
+// сервера может прийти в любой момент
+// и если придет раньше, то код в обработчике не выполнится
+xhr.addEventListener('load', function() {
+  console.log(xhr.readyState);// 4
+
+  console.log(xhr.status + ' ' + xhr.responseText);
+});
+
+// создаем сам запрос
+xhr.open('GET', 'https://up.htmlacademy.ru/assets/javascript/demo/8-xhr/data.json');
+
+// отправляем запрос
+// обработчик готов уже заранее
+xhr.send();
+
+console.log(xhr.readyState);// 1
+
+JSON.parse("{'a': 1}");//преобразует строку в объект
+JSON.stringify({a : 1})//преобразует объект в строку
+
+
+
+
+
+
+'use strict';
+
+let num = 10;
+
+
+// TRY CATCH ERROR////////////////////////////////////////
+
+try {
+  //здесь код в котором может произойти ошибка
+  JSON.parse("jjjjjfjfjfjfj");
+} catch (error) {
+  // и тогда выведет ошибку и не сломает скрипт
+  console.log("произошла ошибка: " + error.message);
+}
+
+//применяем на сетевом запросе
+
+var xhr = new XMLHttpRequest();
+
+//здесь сообщим явно что хотим получить
+xhr.responseType = 'json';
+
+xhr.addEventListener('load', function() {
+  try {
+    // responseText - это текст, которым ответил сервер
+    // responseText и response - одно и то же. если только 
+    // заранее не задать тип этого запроса
+    console.log(xhr.response);
+    //если явно не задавать то тогда вот так
+    console.log(JSON.parse(xhr.responseText));
+  } catch (err) {
+    console.error(err.message);
+  }
+});
+//здесь не надо оборачивать в конструкция try catch так как
+// явно указан тип запроса. поэтому прозойдет либо событие LOAD
+// либо событие ERROR которое нужно уже отдельно обрабатывать
+
+xhr.open("GET", "the address of the request");
+xhr.send();
+
+
+// также хорошо обработать на коды ошибок
+var onError = function(message) {
+  console.error(message);
+};
+
+var onSuccess = function(data) {
+  var request = data;
+
+  console.log(request);
+};
+
+xhr.addEventListener('load', function() {
+  var error;
+  switch(xhr.status) {
+    case 200:
+      onSuccess(xhr.response);
+      break;
+    case 400:
+      error = "Неверный запрос";
+      break;
+    case 401:
+      error = "Пользователь не авторизован";
+      break;
+    case 404:
+      error = "Ничего не найдено";
+      break;
+    default:
+      error = "Статус ответа: " + xhr.status + ' ' + xhr.statusText;
+  }
+
+  if(error) {
+    onError(error)
+  }
+});
+
+
+
+// также есть ошибки соединения и если просто не успел выполниться
+
+// ошибка error = ошибка кода 5**
+xhr.addEventListener('error', function() {
+  onError('Произошла ошибка соединения');
+});
+
+//по дефолту таймаут длится 30 секунд
+xhr.addEventListener('timeout', function() {
+  onError("Запрос не успел выполниться за " + xhr.timeout + "мс");
+})
+
+// но можно это значение изменить
+xhr.timeout = 1000;
+
+
+// решим две задачи
+// 1) изменим информацию на странице без перезагрузки страницы
+// 2) получим данные с сервера
+
+//это модуль upload.js
+(function() {
+  var URL = "адрес, куда мы отправим данные";
+  window.upload = function (data, onSuccess){
+    var xhr = new this.XMLHttpRequest();
+    xhr.responseType = 'json';
+
+    xhr.addEventListener('load', function() {
+      onSuccess(xhr.response);
+    });;
+
+    xhr.open("POST", URL);
+    xhr.send(data);
+  };
+})();
+
+//забегаем в HTML и используем функцию upload
+var form = document.querySelector('.setup-form');
+form.addEventListener('submit', function(evt) {
+  // в FromData передаем в качестве параметра DOM объект form
+  window.upload(new FormData(form), function(response) {
+    userDialog.classlist.add('hiden');
+  });
+  //отменяет функцию формы по умолчанию
+  evt.preventDefault();
+});
+
+//модуль для загрузки данных
+
+(function() {
+  //экспортируем функцию загрузки для успешных и неуспешных попыток
+  window.load = function(onSuccess, onError) {
+    //Опишем простой случай когда все хорошо
+    var xhr = new this.XMLHttpRequest();
+    xhr.responseType = 'json';
+
+    xhr.open('GET', URL);
+
+    xhr.addEventListener('load', function() {
+      onSuccess(xhr.response);
+    });
+
+    xhr.send();
+  }
+})
+
+
+try {
+  to
+} catch {
+  me
+}; 
