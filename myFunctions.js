@@ -301,3 +301,133 @@ function findFirstUniqueChar(string) {
 
 console.log(findFirstUniqueChar(string))
 // k
+
+
+//////////////////////////////////////////////////////////////
+//найти всех старше определенного возраста
+//посмотри что можно скармливать new Date()
+const people = [
+  { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' }];
+
+console.log(people.filter(person => new Date().getFullYear() - new Date(person.DOB).getFullYear() > 30).map(person => person.firstName));
+
+//отсортировать по возрасту
+console.log(people.sort((personA, personB) => new Date(personA.DOB).getFullYear() - new Date(personB.DOB).getFullYear()))
+
+
+//////////////////////////////////////////////////////////////
+//посчитать сколько в каждом департаменте
+const countDepMembers = people.reduce((accumulator, person) => ({ ...accumulator, [person.department]: accumulator[person.department] + 1 || 1}), {});
+
+console.log(countDepMembers)
+//{Development: 6, Marketing: 2, Sales: 3, Office Management: 1}
+
+//также можно вывести массив всех уникальных названий департаментов
+let departments = [... new Set(people.map(person => person.department))];
+
+
+/////////////////////////////////////////////////////////////
+//Разворачивание массива массивов
+var flattened = [[0, 1], [2, 3], [4, 5]].reduce(function(a, b) {
+  return a.concat(b);
+});
+const merged = arr.reduce((prev, item) => [...prev, ...item])
+// flattened равен [0, 1, 2, 3, 4, 5]
+
+
+////////////////////////////////////////////////////////////////
+//сложить все книги
+var friends = [ 
+  { name: "Anna", books: ["Bible", "Harry Potter"], age: 21 }, 
+  { name: "Bob", books: ["War and peace", "Romeo and Juliet"], age: 26 },
+  { name: "Alice", books: ["The Lord of the Rings", "The Shining"], age: 18 }
+  ]
+  
+// allbooks - список, который будет содержать все книги друзей + 
+// дополнительный список указанный в initialValue
+var allbooks = friends.reduce(function(prev, curr) {
+return [...prev, ...curr.books];
+}, ["Alphabet"]);
+
+console.log(allbooks)
+//["Alphabet", "Bible", "Harry Potter", "War and peace", "Romeo and Juliet", "The Lord of the Rings", "The Shining"]
+
+
+///////////////////////////////////////////////////////////////////////
+//посчитать количество каждого элемента
+const count = fruitBasket.reduce( (tally, fruit) => {
+  if(!tally[fruit]) {
+    tally[fruit] = 1;
+  } else {
+    tally[fruit] += 1
+  }
+	// tally[fruit] = (tally[fruit] || 0) + 1 ;
+
+	return tally;
+} , {})
+
+console.log(count) // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
+
+
+////////////////////////////////////////////////////////////////////////
+//добавить в объект свойство с полной ценой
+const orders = [
+  { orderId: '123', customerId: '123', deliveryDate: '01-01-2020', delivered: true, items: [
+      { productId: '123', price: 55 },
+      { productId: '234', price: 30 },
+  ]},
+  { orderId: '234', customerId: '123', deliveryDate: '01-02-2020', delivered: true, items: [
+      { productId: '234', price: 30 },
+  ]}]
+
+const ordersWithTotalPrice = orders.map(order => ({...order, orderTotal: order.items.reduce((total, item) => total + item.price, 0)}))
+
+//вывести все заказы определенного покупателя
+const customerOrders = orders.filter(order => order.customerId === '123').reduce((total, item) => [...total, ...item.items], [])
+
+console.log(customerOrders)
+
+//было ли продан хоть раз продукт под определенным id
+const isSold = orders.reduce((acc, order) => [...acc, ...order.items], []).some(item => item.productId === '123')
+
+//сколько раз продался
+const howMuchSold = orders.reduce((acc, order) => [...acc, ...order.items], []).filter(item => item.productId === '123').length
+
+
+/////////////////////////////////////////////////////////////////////
+
+const users = [
+  { id: '88f24bea-3825-4237-a0d1-efb6b92d37a4', firstName: 'Sam', lastName: 'Hughes' },
+  { id: '2a35032d-e02b-4508-b3b5-6393aff75a53', firstName: 'Terri', lastName: 'Bishop' },
+  { id: '7f053852-7440-4e44-838c-ddac24611050', firstName: 'Jar', lastName: 'Burke' }
+];
+
+const comments = [
+  { userId: '88f24bea-3825-4237-a0d1-efb6b92d37a4', text: 'Great Job!' },
+  { userId: '7f053852-7440-4e44-838c-ddac24611050', text: 'Well done, I think I understand now!' },
+  { userId: 'e789565f-fa5a-4d5e-8f6c-dd126cf995be', text: 'How do you do that? 😲' }
+];
+
+//добавить в users полные имя и фамилию
+const usersWithFullNames = users.map((user) => ({...user, fullName: user.firstName + " " + user.lastName}))
+
+//Добавить в комменты имена и фамилии тех, кто оставил коммент
+function findUser(user, comment) {
+  let curUser = user.find(person => person.id === comment.userId);
+  let firstName = curUser.firstName;
+  let lastName = curUser.lastName;
+  return firstName + " " + lastName;
+}
+
+const commentsWithNames = comments.map(comment => ({...comment, user: findUser(users, comment)}))
+
+//2-way
+const commentsWithNames2 = comments.map(comment => {
+	const { firstName, lastName} = users.find(user => user.id === comment.userId);
+	return { ...comment, firstName, lastName};
+	//если не кратко, то
+  	//return { ...comment, firstName: firstName, lastName: lastName}
+})
+
+//кто вообще не оставлял комментариев
+const haveNotComment = users.filter(user => !comments.find(comment => comment.userId === user.id))
