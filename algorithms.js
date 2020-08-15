@@ -1,4 +1,4 @@
-///////////FIZ BUZZ///////////////////
+///////////FIZ BUZZ//////////////
 
 function fizzBuzz(num) {
   for(let i = 1; i <= num; i++) {
@@ -9,7 +9,9 @@ function fizzBuzz(num) {
   }
 }
 
-/////////HARMLESS RANSOM NOTE//////////////
+
+/////////HARMLESS RANSOM NOTE////////////
+
 //Linear Time Complexity O(n) or O(n + m)
 
 function harmlessRansomNote(noteText, magazineText) {
@@ -38,7 +40,7 @@ function harmlessRansomNote(noteText, magazineText) {
 harmlessRansomNote('', 'this is all the magazine text in the magazine');
 
 
-////////////////////IS PALINDROME////////////////////////
+///////////IS PALINDROME///////////////
 
 function isPalindrome(string) {
   string = string.toLowerCase();
@@ -53,7 +55,8 @@ function isPalindrome(string) {
 console.log(isPalindrome("Madam, i'm Adam"))
 
 
-///////////////////////CAESAR CIPHER///////////////////////////
+
+/////////////CAESAR CIPHER/////////////
 
 function caesarCipher(str, num) {
   //если входное Num будет большим(300), то решить это можно модулем
@@ -86,7 +89,8 @@ function caesarCipher(str, num) {
 console.log(caesarCipher('tomaz jom', 2))
 
 
-////////////////////////REVERSE WORDS/////////////////////////////
+////////////REVERSE WORDS////////////////
+
 //no Array.reverse() method
 
 function reverseWord(word) {
@@ -108,7 +112,10 @@ function reverseString(string) {
 
 console.log(reverseString('Time to grow up'))
 
-//////////REVERSE ARRAY IN PLACE//////////////
+
+
+//////////REVERSE ARRAY IN PLACE/////////////
+
 //no Array.reverse() method
 // no create new array in the loop and push in it
 
@@ -127,7 +134,9 @@ console.log(reverseArrayInPlace(array))
 //["three", "two", "one"]
 
 
-/////////////MEAN MEDIAN MODE/////////////
+
+/////////MEAN MEDIAN MODE//////////
+
 
 function getMean(array) {
   return array.reduce((total, num) => total + num, 0) / array.length;
@@ -197,7 +206,7 @@ console.log(meanMedianMode([9, 10, 23, 10, 23, 9]));
 //   mode: []
 
 
-////////////////////TWO SUM////////////////////////
+////////////TWO SUM////////////////
 
 function twoSum(numArray, sum) {
   let pairs = [];
@@ -222,7 +231,7 @@ console.log(twoSum([1, 6, 4, 5, 3, 3], 7));
 //[[6, 1], [3, 4], [3, 4]]
 
 
-///////////////////////BINARY SEARCH/////////////////////////////
+////////////BINARY SEARCH//////////////
 
 //recursive version
 
@@ -259,3 +268,200 @@ function binarySearch(array, key) {
   
   return - 1;
 }
+
+/////////////FIBONACCI/////////////////
+
+//with recursive
+//but it has bad a time complexity O(n^2)
+//SLOOOOOOOOOW
+function fibonacci(position) {
+  if(position < 3) return 1;
+  else return fibonacci(position - 1) + fibonacci(position - 2);
+}
+
+///FASTER
+//without recursive, but it is more efficient
+function fibonacci(position) {
+  let fibStart = [1, 1];
+  for(let i = 0; i < fibStart.length; i++) {
+    fibStart.push(fibStart[i] + fibStart[i + 1]);
+    if(i === position - 1) return fibStart[i];
+  }
+}
+
+console.log(fibonacci(0))
+
+///FASTER THAN PREVIOUS
+//Memoized Fibonacci(Мемоизация)
+
+function fibMemo(index, cache) {
+  cache = cache || [];
+  if(cache[index]) return cache[index];
+  else {
+    if(index < 3) return 1;
+    else {
+      cache[index] = fibMemo(index - 1, cache) + fibMemo(index - 2, cache);
+    }
+  }
+
+  return cache[index];
+}
+
+///EVEN FASTER THAN PREVIOUS
+function fibonacci3(position, cache) {
+  cache = cache || [1, 1];
+  for(let i = 0; i < cache.length; i++) {
+    cache.push(cache[i] + cache[i + 1]);
+    if(i === position - 1) return cache[i];
+  }
+}
+
+
+
+//////////SIEVE OF ERATOSTHENES////////////
+
+//return all prime numbers(простые числа)
+//Решето Эратосфена
+
+//only loops, no specific methods
+function sieveOfEratosthenes(num) {
+  let primes = [];
+
+  for(let i = 2; i <= num; i++) {
+    primes[i] = true;
+  }
+
+  for(let i = 2; i ** 2 <= num; i++) {
+    if(primes[i] === true) {
+      for(let j = 2; j * i <= num; j++) {
+        primes[i * j] = false;
+      }
+    }
+  }
+
+  let result = [];
+
+  for(let i = 2; i < primes.length; i++) {
+    if(primes[i]) result.push(i);
+  }
+
+  return result;
+}
+
+
+//без решета, но тоже ищет простые числа
+//сразу без четных для экономии памяти
+
+function isPrime(num) {
+  if (num <= 1) return false;
+  else if (num === 2) return true;
+  else {
+    for (let i = 2; i < num; i++) {
+      if (num % i === 0)
+        return false;
+    }
+      return true;
+  }
+}
+
+function sieveOfEratosthenes2(num) {
+  let sieve = [2];
+
+  for(let i = 3; i <= num; i += 2) {
+    sieve.push(i);
+  }
+
+  return sieve.filter(isPrime);;
+}
+
+
+/////BUBBLE SORT/////
+//number of passes = array - 1
+
+function bubbleSort2(array) {
+  for(let i = array.length; i > 0; i--) {
+    for(let j = 0; j < i; j++) {
+      if(array[j] > array[j + 1]) {
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
+      }
+    }
+  }
+  return array;
+}
+
+
+/////////MERGE SORT//////////
+
+function mergeSort(arr) {
+  if(arr.length < 2) return arr;
+
+  let middleIndex = Math.floor(arr.length / 2);
+  let firstHalf = arr.slice(0, middleIndex);
+  let secondHalf = arr.slice(middleIndex);
+
+  return merge(mergeSort(firstHalf), mergeSort(secondHalf));
+}
+
+function merge(arr1, arr2) {
+  let result = [];
+
+  while(arr1.length && arr2.length) {
+    let minElem;
+
+    if(arr1[0] < arr2[0]) minElem = arr1.shift();
+    else minElem = arr2.shift();
+
+    result.push(minElem);
+  }
+
+  if(arr1.length) result = result.concat(arr1);
+  else result = result.concat(arr2);
+
+  return result;
+}
+
+
+////////////MAX STOCK PROFIT//////////////
+
+//first way
+function maxStockProfit(pricesArr) {
+  let maxProfit = -1;
+  let buyPrice = 0;
+  let sellPrice = 0;
+  let changeBuyPrice = true;
+
+  for(let i = 0; i < pricesArr.length; i++) {
+    if(changeBuyPrice) buyPrice = pricesArr[i];
+    sellPrice = pricesArr[i + 1];
+
+    if(sellPrice < buyPrice) changeBuyPrice = true;
+    else {
+      let tempProfit = sellPrice - buyPrice;
+      if(tempProfit > maxProfit) maxProfit = tempProfit;
+      changeBuyPrice = false;
+    }
+  }
+  return maxProfit;
+}
+
+//second way
+const maxStockProfit2 = arr => {
+  let maxProfit = 0; // initialize max
+  let buyPrice = arr[0];
+
+  for(let i = 1; i < arr.length; i++){
+      let sellPrice = arr[i];
+
+      if(sellPrice < buyPrice) buyPrice = sellPrice;
+      else {
+        let profit = sellPrice - buyPrice;
+        console.log(maxProfit, profit)
+        maxProfit = Math.max(profit, maxProfit);
+      }
+  }
+
+  return maxProfit;
+}
+
+
+let array = [32, 46, 26, 38, 40, 48, 42];
