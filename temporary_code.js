@@ -123,3 +123,8 @@ while(true) {
     commandFriends();
     commandHero();
 }
+
+
+
+
+111111111111111111111111111111111
