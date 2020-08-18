@@ -431,3 +431,25 @@ const commentsWithNames2 = comments.map(comment => {
 
 //кто вообще не оставлял комментариев
 const haveNotComment = users.filter(user => !comments.find(comment => comment.userId === user.id))
+
+////////////////////////////////////////////
+//highlight all words which contain more than 8 characters
+//+input range and show this range
+
+let text = document.querySelector('.some_text');
+const button = document.querySelector('.highlight-btn');
+let range = document.querySelector('.range');
+let rangeValue = document.querySelector('.rangeValue');
+
+range.addEventListener('change', function() {
+  rangeValue.textContent = range.value;
+})
+
+button.addEventListener('click', function(evt) {
+  evt.preventDefault();
+
+  text.innerHTML = text.innerText
+  .split(' ')
+  .map(word => word.length > range.value ? `<span style='background-color: yellow'>${word}</span>` : word)
+  .join(' ');
+})
