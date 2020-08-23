@@ -431,3 +431,23 @@ const commentsWithNames2 = comments.map(comment => {
 
 //кто вообще не оставлял комментариев
 const haveNotComment = users.filter(user => !comments.find(comment => comment.userId === user.id))
+
+
+//РЕКУРСИЯ
+
+function sumNum(num) {
+  if(num === 0) return num;
+  else {
+    return num % 10 + sumNum(Math.floor(num / 10));
+  }
+}
+
+function sumArr(arr) {
+  if(arr.length === 0) return 0;
+  else {
+    return arr[arr.length - 1] + sumArr(arr.slice(0, -1))
+  }
+}
+
+console.log(sumArr([1, 2, 3])) // 6
+console.log(sumNum(123)) // 6
