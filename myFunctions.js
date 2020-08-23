@@ -461,3 +461,17 @@ function revStr(str){
   return revStr(str.substr(1)) + str[0];
 }revStr('cat');
 // tac
+
+
+//Hamming Distance
+//разница между словами
+
+function hammingDistance(str1, str2) {
+  return str1.split('')
+  .filter((letter, index) => 
+  letter != str2[index]).length;
+}
+
+console.log(hammingDistance("abcde", "bcdef")); // 5
+console.log(hammingDistance("abcde", "abcde")); // 0
+console.log(hammingDistance("strong", "strung")); // 1
