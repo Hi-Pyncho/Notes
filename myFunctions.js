@@ -435,6 +435,10 @@ const haveNotComment = users.filter(user => !comments.find(comment => comment.us
 
 //РЕКУРСИЯ
 
+// f(324) = 4 + f(32)
+// f(32)  = 2 + f(3)
+// f(3)   = 3  + 0 (stop here)
+
 function sumNum(num) {
   if(num === 0) return num;
   else {
@@ -451,3 +455,9 @@ function sumArr(arr) {
 
 console.log(sumArr([1, 2, 3])) // 6
 console.log(sumNum(123)) // 6
+
+function revStr(str){
+  if (str === '') return '';
+  return revStr(str.substr(1)) + str[0];
+}revStr('cat');
+// tac
