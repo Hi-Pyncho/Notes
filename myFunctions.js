@@ -432,6 +432,7 @@ const commentsWithNames2 = comments.map(comment => {
 //кто вообще не оставлял комментариев
 const haveNotComment = users.filter(user => !comments.find(comment => comment.userId === user.id))
 
+<<<<<<< HEAD
 ////////////////////////////////////////////
 //highlight all words which contain more than 8 characters
 //+input range and show this range
@@ -490,3 +491,48 @@ inputRub.addEventListener('input', () => {
     }
   })
 });
+=======
+
+//РЕКУРСИЯ
+
+// f(324) = 4 + f(32)
+// f(32)  = 2 + f(3)
+// f(3)   = 3  + 0 (stop here)
+
+function sumNum(num) {
+  if(num === 0) return num;
+  else {
+    return num % 10 + sumNum(Math.floor(num / 10));
+  }
+}
+
+function sumArr(arr) {
+  if(arr.length === 0) return 0;
+  else {
+    return arr[arr.length - 1] + sumArr(arr.slice(0, -1))
+  }
+}
+
+console.log(sumArr([1, 2, 3])) // 6
+console.log(sumNum(123)) // 6
+
+function revStr(str){
+  if (str === '') return '';
+  return revStr(str.substr(1)) + str[0];
+}revStr('cat');
+// tac
+
+
+//Hamming Distance
+//разница между словами
+
+function hammingDistance(str1, str2) {
+  return str1.split('')
+  .filter((letter, index) => 
+  letter != str2[index]).length;
+}
+
+console.log(hammingDistance("abcde", "bcdef")); // 5
+console.log(hammingDistance("abcde", "abcde")); // 0
+console.log(hammingDistance("strong", "strung")); // 1
+>>>>>>> 0f723c93b433055afb78d7cdb270f1c59351b03f
