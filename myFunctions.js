@@ -453,3 +453,40 @@ button.addEventListener('click', function(evt) {
   .map(word => word.length > range.value ? `<span style='background-color: yellow'>${word}</span>` : word)
   .join(' ');
 })
+
+
+////////////////////////////////////////////////////
+// Сделать так, чтобы каждое предложение начиналось с новой строки
+let text = document.querySelector('.some_text');
+let regExp3 = /(?<=[.]+)\s+/g;
+text.innerText = text.innerText.replace(regExp3, '\n');
+
+
+/////////////////////////////////////////////////////
+//простой пример AJAX запроса(конвертация валюты)
+const inputRub = document.querySelector('#rub');
+const inputUsd = document.querySelector('#usd');
+
+inputRub.addEventListener('input', () => {
+  const request = new XMLHttpRequest();
+
+  request.open('GET', './usd.JSON');
+  request.setRequestHeader('Content-type', 'application/json', 'charset=utf-8'); 
+  request.send();
+  
+
+  //status (404, 200 ...)
+  //statusText(OK...)
+  //respnseText / response
+  //readyState (0, 1, 2, 3, 4)
+
+  request.addEventListener('readystatechange', () => {
+    if(request.readyState === 4 && request.status === 200) {
+      let data = JSON.parse(request.response);
+      
+      inputUsd.value = inputRub.value / data.usd;
+    } else {
+      inputUsd.value = 'Что-то пошло не так';
+    }
+  })
+});
