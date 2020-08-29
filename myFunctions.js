@@ -535,4 +535,50 @@ function hammingDistance(str1, str2) {
 console.log(hammingDistance("abcde", "bcdef")); // 5
 console.log(hammingDistance("abcde", "abcde")); // 0
 console.log(hammingDistance("strong", "strung")); // 1
->>>>>>> 0f723c93b433055afb78d7cdb270f1c59351b03f
+
+
+
+/////////////////////////////////////////////////////
+//пример наследования в классах
+
+class Component {
+  constructor(selector) {
+    this.$el = document.querySelector(selector);
+  }
+
+  hide() {
+    this.$el.style.display = 'none';
+  }
+
+  show() {
+    this.$el.style.display = 'block';
+  }
+}
+
+class Box extends Component {
+  constructor(options) {
+    super(options.selector);
+    
+    this.$el.style.width = this.$el.style.height = options.size + 'px';
+    this.$el.style.backgroundColor = options.color;
+  }
+}
+
+const box1 = new Box({
+  selector: '#box1',
+  size: 100,
+  color: 'black'
+})
+
+class Circle extends Box {
+  constructor(options) {
+    super(options);
+    this.$el.style.borderRadius = '50%';
+  }
+}
+
+const circle = new Circle({
+  selector: "#circle1",
+  size: 100,
+  color: 'red'
+})
