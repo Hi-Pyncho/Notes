@@ -163,3 +163,48 @@ console.timeEnd("answer time");
 // answer time: 2192.10986328125ms
 // answer time: 5388.81298828125ms
 // console.timeLog => Выводит в консоль текущее значение таймера, запущенного вызовом console.time().
+
+
+////////////////////////////////////////
+//пример промисов
+console.log('Request data...')
+
+const p = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Preparing data...');
+
+    const data = {
+      server: 'asw',
+      port: 2000,
+      status: 'working'
+    };
+
+    resolve(data);
+  }, 2000);
+})
+
+p.then((data) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      data.modified = true;
+      resolve(data);
+    }, 2000);
+  })
+}).then(data => {
+  console.log('Data recieved', data);
+})
+
+const sleep = ms => new Promise(resolve => setTimeout(() => resolve(), ms));
+
+sleep(2000).then(() => console.log('After 2 seconds'));
+sleep(3000).then(() => console.log('After 3 seconds'));
+
+//сработает, когда завершится самый медленный Promise
+Promise.all([sleep(5000), sleep(2000)]).then(() => {
+  console.log('All promises');
+})
+
+//сработает когда завершится самый быстрый Promise
+Promise.race([sleep(5000), sleep(2000)]).then(() => {
+  console.log('Race promises');
+})
