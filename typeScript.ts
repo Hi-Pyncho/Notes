@@ -92,3 +92,78 @@ class Clock implements IClock {
         this.time = date;
     }
 }
+
+//Если нужно перечислить свойства не зная точно сколько их будет
+interface Styles {
+    [key: string]: string;
+}
+
+const css: Styles = {
+    border: '1px solid black',
+    marginTop: '2px',
+    borderRadius: '5px'
+}
+
+//================================
+//Enums
+enum Membership {
+    Basic,
+    Standart,
+    Premium
+}
+
+const membership = Membership.Standart;
+const membershipReverse = Membership[2];
+console.log(membership) //1
+console.log(membershipReverse) //Premium
+
+enum SocialMedia {
+    VK = 'vkontakte',
+    FACEBOOK = 'Facebook',
+    INSTAGRAM = 'instagram'
+}
+
+const social = SocialMedia.INSTAGRAM;
+console.log(social);// instagram
+
+//======================================
+//Functions
+//TypeScript будет умнее подсказывать методы, когда знает, какой ждать тип
+function add(a:number, b:number): number {
+    return a + b;
+}
+
+function toUpperCase(str:string): string {
+    return str.trim().toUpperCase();
+}
+
+//определяем потенциальные вызовы функций
+interface MyPosition {
+    x: number | undefined;
+    y: number | undefined;
+}
+
+interface MyPositionWithDefault extends MyPosition {
+    default: string;
+}
+
+function position(): MyPosition
+function position(a: number): MyPositionWithDefault
+function position(a: number, b: number): MyPosition
+
+function position(a?: number, b?: number) {
+    if(!a && !b) {
+        return {x: undefined, y: undefined};
+    }
+    if(a && !b) {
+        return {x: a, y: undefined, default: a.toString()};
+    }
+    return {x: a, y: b};
+}
+
+console.log('Emty', position());
+console.log('One param', position(42));
+console.log('Two params', position(18, 15));
+
+//============================================
+//Классы

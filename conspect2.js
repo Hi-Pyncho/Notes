@@ -199,12 +199,22 @@ const sleep = ms => new Promise(resolve => setTimeout(() => resolve(), ms));
 sleep(2000).then(() => console.log('After 2 seconds'));
 sleep(3000).then(() => console.log('After 3 seconds'));
 
-//сработает, когда завершится самый медленный Promise
+//сработает, когда успешно завершатся все промисы. если хотя бы один
+// отклонен, то Promise.all отклонится тоже
 Promise.all([sleep(5000), sleep(2000)]).then(() => {
   console.log('All promises');
 })
 
-//сработает когда завершится самый быстрый Promise
+// и данные приходят в том порядке, в каком указали в параметрах
+//p3 = 4
+//p3 = 3
+//p = 2
+Promise.all([p3, p2, p]).then((data) => {
+  console.log(data)
+}); // [4, 3, 2]
+//Ожидает исполнения или отклонения любого из полученных промисов.
+// Возвращает промис, который будет исполнен или отклонен с результатом 
+// исполнения первого исполненного или отклонённого промиса из .iterable.
 Promise.race([sleep(5000), sleep(2000)]).then(() => {
   console.log('Race promises');
 })

@@ -516,10 +516,13 @@ function sumArr(arr) {
 console.log(sumArr([1, 2, 3])) // 6
 console.log(sumNum(123)) // 6
 
-function revStr(str){
-  if (str === '') return '';
-  return revStr(str.substr(1)) + str[0];
-}revStr('cat');
+function reverseString(str) {
+  if (str === "")
+    return "";
+  else
+    return reverseString(str.substr(1)) + str[0];
+}
+revStr('cat');
 // tac
 
 
