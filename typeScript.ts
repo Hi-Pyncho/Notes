@@ -167,3 +167,152 @@ console.log('Two params', position(18, 15));
 
 //============================================
 //Классы
+class TypeScript {
+    version: string;
+
+    constructor(version: string) {
+        this.version = version;
+    }
+
+    info(name: string) {
+        return `[${name}]: TypeScript version is ${this.version}`;
+    }
+}
+
+class Car {
+    readonly model: string;
+    readonly numberOfWheels: number = 4;
+
+    constructor(theModel: string) {
+        this.model = theModel;
+    }
+}
+//также можно такую запись сделать короче
+class Car2 {
+    readonly NumberOfWheels: number = 4;
+    constructor(readonly model: string) {}
+}
+//=====================================
+//Модификаторы protected, public(по умолчанию), private
+//protected - доступен в классе и в наследуемых классах, но не в инстансах
+//private - доступен только в том классе, где был определен
+class Animal {
+    protected voice: string = '';
+    public color: string = 'black';
+
+    constructor() {
+        this.go();
+    }
+
+    private go() {
+        console.log('Go');
+    }
+}
+
+class Cat extends Animal {
+    public setVoice(voice: string): void {
+        this.voice = voice;
+    }
+}
+const cat = new Cat();
+cat.setVoice('meow');
+cat.color; // black
+// cat.voice; // error(protected)
+
+//===========================================
+//Абстрактные Классы
+//реализует методы, ктр должны быть реализовны при наследовании 
+//они ни во что не компилируются
+abstract class Component {
+    abstract render(): void;
+    abstract info(): string;
+}
+
+class AppComponent extends Component {
+    render(): void {
+        console.log('Component on render');
+    }
+
+    info(): string {
+        return 'This is info';
+    }
+}
+
+//============================================
+// Guards 
+function strip(x: string | number) {
+    if(typeof x === 'number') return x.toFixed(2);
+    return x.trim();
+}
+//instanseof принадлежность объекта к классу
+class MyResponse {
+    header = 'response header';
+    result = 'response result';
+}
+class MyError {
+    header = 'error header';
+    message = 'error message';
+}
+function handle(res: MyResponse | MyError) {
+    if(res instanceof MyResponse) {
+        return {
+            info: res.header + res.result
+        }
+    } else {
+        return {
+            info: res.header + res.message
+        }
+    }
+}
+
+//==========================================
+type AlertType = 'success' | 'danger' | 'warning';
+
+function setAlertType(type: AlertType) {
+    //.....
+}
+
+setAlertType('success');
+setAlertType('warning');
+// setAlertType('default'); // Error
+
+//============================================
+//Generic Types
+//подстраивается под типы
+const arrNum: Array<number> = [1, 1, 2, 3, 5];
+const arrStr: Array<string> = ['Hi', 'Bob'];
+
+function reverse<T>(array: T[]): T[] {
+    return array.reverse();
+}
+reverse(arrNum);
+reverse(arrStr);
+
+//=====================================
+//Операторы
+//keyof
+interface Person {
+    name: string;
+    age: number;
+}
+
+type PersonKeys = keyof Person; // 'name' | 'age'
+
+let key: PersonKeys = 'name';
+key = 'age';
+// key = 'job' // Error
+
+//Exclude - исключает 
+//Pick - включает
+type User = {
+    _id: number;
+    name: string;
+    email: string;
+    createdAt: Date;
+}
+
+type UserKeysNoMeta = Exclude<keyof User, '_id' | 'createdAt'>; // 'name' | 'email'
+type UserKeysWithMeta = Pick<User, '_id' | 'createdAt'>; // '_id' | 'createdAt'
+
+let u1: UserKeysNoMeta = 'name';
+// u1 = '_id' // error
