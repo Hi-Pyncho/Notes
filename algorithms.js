@@ -9,6 +9,16 @@ function fizzBuzz(num) {
   }
 }
 
+function FizzBuzz(num) {
+  const fizz = num % 3 === 0;
+  const buzz = num % 5 === 0;
+  return fizz && buzz ? 'fizzBuzz' 
+         : fizz ? 'fizz' 
+         : buzz ? 'Buzz'
+         : num;
+}
+
+
 
 /////////HARMLESS RANSOM NOTE////////////
 
