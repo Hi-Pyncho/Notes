@@ -20,7 +20,13 @@ function parseToInteger(str) {
 console.log(parseToInteger(str));
 //234211034
 
+///////////////////////////////////////////////////
+// генерирует числа 
 
+const range = (start, end) => {
+    const length = end - start + 1;
+    return Array.from({ length }, (_, i) => start + i);
+}
 
 /////////////////////////////////////////////////////
 //получает разрешение файла
