@@ -218,3 +218,23 @@ Promise.all([p3, p2, p]).then((data) => {
 Promise.race([sleep(5000), sleep(2000)]).then(() => {
   console.log('Race promises');
 })
+
+//FullScreen Api
+const img = document.querySelector('img')
+img.addEventListener('click', toggleScreen)
+
+function toggleScreen() {
+  if(!document.fullscreenElement) {
+    img.requestFullscreen()
+  }else {
+    if(document.fullscreenEnabled) {
+      document.exitFullscreen()
+    }
+  }
+  }
+}
+
+// прослушка HTML на изменение полноэкранного режима
+document.documentElement.addEventListener('fullscreenchange', function() {
+  console.log('some actions')
+})
