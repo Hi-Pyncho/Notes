@@ -42,4 +42,6 @@
 
 - CodeCombat ([Профиль](https://codecombat.com/user/pyncho))
 
+- Duolingo ([Профиль](https://www.duolingo.com/profile/HiPyncho))
+
 
