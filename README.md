@@ -19,7 +19,7 @@
   - [Learn GIT](https://learngitbranching.js.org)
   - Скринкасты от HTML-Academy
  
-- [YouTube](https://www.youtube.com/channel/UCz8bCfIHKnKs2bOX3zuQXSg/channels?view_as=subscriber)
+- YouTube ([Каналы](https://www.youtube.com/channel/UCz8bCfIHKnKs2bOX3zuQXSg/channels?view_as=subscriber))
 
 - React JS с Нуля до Профи. Полное руководство(Владилен Минин)
 
