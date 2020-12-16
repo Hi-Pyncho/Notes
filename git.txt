@@ -167,3 +167,18 @@ git remote show origin (свяжется с репозиторием, покаж
 git push --delete origin coolFunction (удалит remote ветку с репозитория)
 git push origin :oldBranch (удалит remote ветку)
 git push origin cmments:comments (отправит текущую ветку cmments в remote ветку comments)
+
+---------------------------------------------------------
+CHERRY-PICK
+Копирует несколько коммитов на место, где находишься(HEAD) + переместит его после HEAD
+git cherry-pick <Commit1> <Commit2> <...>
+git rebase -i HEAD~4 (выберет коммиты до нужно коммита. теперь можно выбрать коммиты для rebase)
+
+---------------------------------------------------------
+TAG
+Можно создавать тэги, которые ссыллаются на опредленный коммит. Даже если хэш коммита изменится, то тэг нет
+git tag [tagName] [commit]
+git tag [tagName] (тэг присвоится HEAD)
+
+
+
