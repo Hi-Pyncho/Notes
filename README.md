@@ -34,7 +34,7 @@
 - Coursera (How Learn to Learn)
 
 - Computer Science
-  - [CS50](https://www.youtube.com/watch?v=Sy_wba7l1UU&list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5)
+  - [CS50](https://javarush.ru/quests/QUEST_HARVARD_CS50)
   - Бхаргава Адитья. Грокаем алгоритмы
 
 ### Онлайн курсы, тренажеры
