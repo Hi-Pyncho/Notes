@@ -1,0 +1,247 @@
+// Syntactically Awesome StyleSheets
+
+
+
+
+
+// Variables ////////////////////////////
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+
+
+
+
+// Nesting ////////////////////////////
+// Css
+nav ul {
+  //some code
+}
+nav li {
+  //some code
+}
+nav a {
+  //some code
+}
+
+// Sass
+nav {
+  ul {
+    //some code
+  }
+  li {
+    //some code
+  }
+  a {
+    //some code
+  }
+}
+
+.container {
+  //code
+  &-title { // === container-title
+    //code
+  }
+}
+
+
+
+
+
+// Modules ////////////////////////////
+// Names for partials start with the underscore (_) character, which tells Sass it is a small segment of CSS and not to convert it into a CSS file.
+_config.scss
+_utilities.scss
+_header.scss
+
+// you can put it in any place
+@import 'utilities';
+
+
+
+
+
+
+// Mixins/functions ////////////////////////////
+// mixins
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  @include flexCenter();
+}
+// functions
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box { @include transform((rotate(30deg))) };
+// => css
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+
+
+
+
+
+
+// Inheritance ////////////////////////////
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+
+  &:hover {
+    // code
+  }
+}
+.error {
+  @extend %message-shared;
+  border-color: red; // you can overwrite it
+}
+//наследуются любые классы
+.panel{
+  background-color: red;
+  height: 70px;
+  border: 2px solid green;
+}
+.big-panel{
+  @extend .panel;
+  width: 150px;
+  font-size: 2em;
+}
+
+
+
+
+// Comments ////////////////////////////
+// => не отображается в финальном css
+/*comment*/ // => отобразится в css
+
+
+
+
+
+// Conditionals ////////////////////////////
+@mixin triangle($size, $color, $direction) {
+  height: 0;
+  width: 0;
+
+  border-color: transparent;
+  border-style: solid;
+  border-width: $size/2;
+
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == right {
+    border-left-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else {
+    @error 'Unknown direction #{direction}.';
+  }
+}
+
+.next {
+  @include triangle(5px, black, right)
+}
+
+
+
+
+
+// Color functions ////////////////////////////
+body {
+  background-color: lighten($primary-color, 10%);
+}
+
+// set text color based on bg
+@function set-text-color($color) {
+  @if(lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}
+
+.element {
+  background-color: $primary-color;
+  color: set-text-color($primary-color)
+}
+
+//++mixin (set bg and color)
+@mixin set-background($color) {
+  background-color: $color;
+  color: set-text-color($color);
+}
+body {
+  @include set-background($primary-color);
+}
+
+
+
+
+
+// for Loop ////////////////////////////
+@for $i from 1 through 12 {
+  .col-#{$i} { width: 100%/12 * $i; }
+}
+// to
+.col-1 {
+  width: 8.33333%;
+}
+
+.col-2 {
+  width: 16.66667%;
+}
+
+.col-12 {
+  width: 100%;
+}
+
+
+
+
+
+// while Loop ////////////////////////////
+$x: 1;
+@while $x < 13 {
+  .col-#{$x} { width: 100%/12 * $x;}
+  $x: $x + 1;
+}
+
+
+
+
+
+// each Loop ////////////////////////////
+$spaceamounts: (1,2,3,4,5);
+
+@each $space in $spaceamounts {
+  .m-#{$space} {
+    margin: #{$space}rem;
+  }
+  .my-#{$space} {
+    margin: #{$space}rem 0;
+  }
+  .p-#{$space} {
+    padding: #{$space}rem;
+  }
+  .py-#{$space} {
+    padding: #{$space}rem 0;
+  }
+}
+

@@ -78,3 +78,72 @@ Object.defineProperties(user, {
 //Возвращает true, если добавление/удаление свойств запрещено и для всех существующих свойств установлено configurable: false.
 ----------Object.isFrozen(obj)--------
 //Возвращает true, если добавление/удаление/изменение свойств запрещено, и для всех текущих свойств установлено configurable: false, writable: false. 
+
+
+
+
+
+
+
+
+
+
+
+// firstRevolver.style.display = 'none'
+
+
+
+
+// id
+// bum1, bum2
+// revolver1, revolver2
+// dead_eyes, skull_top, jaw, hat, class(enemy)
+
+
+
+
+// bulletContainer.append(getBulletLetter('G'))
+// bulletContainer.append(getBulletLetter('G'))
+
+
+
+
+
+// setBulletWord('heLLo')
+// bulletContainer.innerHTML = ''
+
+// bulletContainer.removeChild(bulletContainer.firstElementChild)
+// bulletContainer.removeChild(bulletContainer.firstElementChild)
+// console.log(bulletContainer.firstElementChild)
+
+
+
+
+// звук выстрела при удаче, звук осечки при неудаче
+
+
+
+
+
+
+
+
+
+// const letters = document.querySelectorAll('.bullet-letter')
+// let letter = ''
+
+// for(e of letters) {
+//   letter += e.textContent
+// }
+
+// console.log(letter)
+
+
+
+
+
+
+
+
+
+

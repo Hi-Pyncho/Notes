@@ -129,6 +129,17 @@ const obj = {
 
 const {address: {street: currentStreet}} = obj;
 
+// Также можно передавать в функцию деструктурированный объект
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+  // do something with these variables
+}
+
+const profileUpdate = ({ name, age, nationality, location }) => {
+  /* do something with these fields */
+}
+
+
 
 ///////////////////////////////////////////////////
 //короткая запись объектов в ES6
@@ -143,6 +154,30 @@ const cat = {name, catAge: age, male};
 console.log(cat)
 //{name: "bob", age: 42, male: "man"}
 
+// Также есть короткие записи при создании объекта
+// Было
+const getMousePosition = (x, y) => ({
+  x: x,
+  y: y
+});
+// Стало
+const getMousePosition = (x, y) => ({ x, y });
+
+// И при записи функций
+// Было
+const person = {
+  name: "Taylor",
+  sayHello: function() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
+// Стало
+const person = {
+  name: "Taylor",
+  sayHello() {
+    return `Hello! My name is ${this.name}.`;
+  }
+};
 
 
 
