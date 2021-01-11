@@ -11,8 +11,6 @@
   - [PHP/MySQL](https://fructcode.com/ru/certificates/9ddc49e143129bc05909767d8d1c22fa/ru/)
  
   - [Linux/GIT/Hosting](https://fructcode.com/ru/certificates/96614432e26bad4534ae31b3fdaa4b17/ru/)
- 
-- Coursera (How Learn to Learn)
 
 - Git/GitHub
   - Наиль Алишев(Полный курс для начинающих и не только)
@@ -32,6 +30,12 @@
 - Eric Traub
   - Learning Algorithms in JavaScript from Scratch
   - Learning Data Structures in JavaScript from Scratch 
+  
+- Coursera (How Learn to Learn)
+
+- Computer Science
+  - [CS50](https://www.youtube.com/watch?v=Sy_wba7l1UU&list=PLawfWYMUziZqyUL5QDLVbe3j5BKWj42E5)
+  - Бхаргава Адитья. Грокаем алгоритмы
 
 ### Онлайн курсы, тренажеры
 - HTML-Academy ([Тренажеры](https://htmlacademy.ru/profile/id1274543))
