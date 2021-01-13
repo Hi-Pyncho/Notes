@@ -16,10 +16,13 @@
   - Наиль Алишев(Полный курс для начинающих и не только)
   - [Learn GIT](https://learngitbranching.js.org)
   - Скринкасты от HTML-Academy
- 
-- YouTube ([Каналы](https://www.youtube.com/channel/UCz8bCfIHKnKs2bOX3zuQXSg/channels?view_as=subscriber))
 
-- React JS с Нуля до Профи. Полное руководство(Владилен Минин)
+- MySQL/PostgreSQL
+  - Практический курс для новичков по SQL и PostgreSQL (Илья Фофанов) 
+
+- React JS 
+  - React JS с Нуля до Профи. Полное руководство(Владилен Минин)
+  - [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
 
 - HTML-Academy:
   - Профессиональный HTML и CSS (уровень 1, 2)
@@ -36,6 +39,8 @@
 - Computer Science
   - [CS50](https://javarush.ru/quests/QUEST_HARVARD_CS50)
   - Бхаргава Адитья. Грокаем алгоритмы
+ 
+- YouTube ([Веб-стандарты](https://www.youtube.com/user/wstdays), [АйТиБорода](https://www.youtube.com/channel/UCeObZv89Stb2xLtjLJ0De3Q), [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g), [Владилен Минин](https://www.youtube.com/channel/UCg8ss4xW9jASrqWGP30jXiw), [The Coding Train](https://www.youtube.com/user/shiffman), [Traversy Media](https://www.youtube.com/user/TechGuyWeb), [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q))
 
 ### Онлайн курсы, тренажеры
 - HTML-Academy ([Тренажеры](https://htmlacademy.ru/profile/id1274543))
