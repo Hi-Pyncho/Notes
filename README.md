@@ -11,17 +11,18 @@
   - [PHP/MySQL](https://fructcode.com/ru/certificates/9ddc49e143129bc05909767d8d1c22fa/ru/)
  
   - [Linux/GIT/Hosting](https://fructcode.com/ru/certificates/96614432e26bad4534ae31b3fdaa4b17/ru/)
- 
-- Coursera (How Learn to Learn)
 
 - Git/GitHub
   - Наиль Алишев(Полный курс для начинающих и не только)
   - [Learn GIT](https://learngitbranching.js.org)
   - Скринкасты от HTML-Academy
- 
-- YouTube ([Каналы](https://www.youtube.com/channel/UCz8bCfIHKnKs2bOX3zuQXSg/channels?view_as=subscriber))
 
-- React JS с Нуля до Профи. Полное руководство(Владилен Минин)
+- MySQL/PostgreSQL
+  - Практический курс для новичков по SQL и PostgreSQL (Илья Фофанов) 
+
+- React JS 
+  - React JS с Нуля до Профи. Полное руководство(Владилен Минин)
+  - [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
 
 - HTML-Academy:
   - Профессиональный HTML и CSS (уровень 1, 2)
@@ -32,6 +33,15 @@
 - Eric Traub
   - Learning Algorithms in JavaScript from Scratch
   - Learning Data Structures in JavaScript from Scratch 
+  
+- Coursera (How Learn to Learn)
+
+- Computer Science
+  - [CS50](https://javarush.ru/quests/QUEST_HARVARD_CS50)
+  - Бхаргава Адитья. Грокаем алгоритмы
+  - Оценка сложности алгоритмов. Нотация Big O (Cronis Academy)
+ 
+- YouTube ([Веб-стандарты](https://www.youtube.com/user/wstdays), [АйТиБорода](https://www.youtube.com/channel/UCeObZv89Stb2xLtjLJ0De3Q), [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g), [Владилен Минин](https://www.youtube.com/channel/UCg8ss4xW9jASrqWGP30jXiw), [The Coding Train](https://www.youtube.com/user/shiffman), [Traversy Media](https://www.youtube.com/user/TechGuyWeb), [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q), [DarkCode](https://www.youtube.com/channel/UCD3KVjbb7aq2OiOffuungzw) ... )
 
 ### Онлайн курсы, тренажеры
 - HTML-Academy ([Тренажеры](https://htmlacademy.ru/profile/id1274543))
