@@ -39,6 +39,7 @@
 - Computer Science
   - [CS50](https://javarush.ru/quests/QUEST_HARVARD_CS50)
   - Бхаргава Адитья. Грокаем алгоритмы
+  - Оценка сложности алгоритмов. Нотация Big O (Cronis Academy)
  
 - YouTube ([Веб-стандарты](https://www.youtube.com/user/wstdays), [АйТиБорода](https://www.youtube.com/channel/UCeObZv89Stb2xLtjLJ0De3Q), [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g), [Владилен Минин](https://www.youtube.com/channel/UCg8ss4xW9jASrqWGP30jXiw), [The Coding Train](https://www.youtube.com/user/shiffman), [Traversy Media](https://www.youtube.com/user/TechGuyWeb), [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q), [DarkCode](https://www.youtube.com/channel/UCD3KVjbb7aq2OiOffuungzw) ... )
 
