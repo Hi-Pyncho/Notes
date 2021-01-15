@@ -18,14 +18,14 @@
   - Скринкасты от HTML-Academy
 
 - MySQL/PostgreSQL
-  - Практический курс для новичков по SQL и PostgreSQL (Илья Фофанов) (**в процессе**)
+  - Практический курс для новичков по SQL и PostgreSQL (Илья Фофанов) ( :muscle:**в процессе** :muscle:)
 
 - React JS 
   - React JS с Нуля до Профи. Полное руководство (Владилен Минин)
   - [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
   
 - NodeJS
-  - Node JS. Практический курс. (Mongo, GraphQL, MySQL, Express) (Владилен Минин) (**в процессе**)
+  - Node JS. Практический курс. (Mongo, GraphQL, MySQL, Express) (Владилен Минин) ( :muscle:**в процессе** :muscle:)
 
 - HTML-Academy:
   - Профессиональный HTML и CSS (уровень 1, 2)
