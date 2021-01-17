@@ -119,3 +119,85 @@ WHERE unit_price < 20
 SELECT *
 FROM orders
 WHERE order_date > '1998-03-01'
+
+---CONDITIONS
+SELECT *
+FROM table
+WHERE condition1 AND condition2
+---
+SELECT *
+FROM table
+WHERE condition1 OR condition2
+---
+SELECT *
+FROM orders
+WHERE shipped_date > '1998-04-30' AND (freight < 75 OR freight > 150)
+
+---BETWEEN
+---включая границы
+SELECT COUNT(*)
+FROM orders
+WHERE freight BETWEEN 20 AND 40 --- ===freight >= 20 AND freight <= 40
+
+---IN
+SELECT *
+FROM customers
+WHERE country IN ('Mexico', 'Germany', 'USA', 'Canada')
+---WHERE country = 'Mexico' OR country = 'Germany' OR country = 'Canada';
+
+---NOT
+SELECT *
+FROM customers
+WHERE country NOT IN ('Mexico', 'Germany', 'USA', 'Canada');
+
+---ORDER BY
+---идет после WHERE если есть
+SELECT DISTINCT country
+FROM customers
+ORDER BY country 
+--- ORDER BY country ASC (по умолчанию - по возрастанию)
+--- ORDER BY country DESC (по убыванию)
+SELECT DISTINCT country, city
+FROM customers
+ORDER BY country DESC, city ASC
+
+--MIN MAX AVG SUM
+SELECT MIN(order_date)
+FROM orders
+WHERE ship_city = 'London'
+---
+SELECT AVG(unit_price)
+FROM products
+WHERE discontinued != 1
+---
+SELECT SUM(units_in_stock)
+FROM products
+WHERE discontinued != 1
+---
+SELECT SUM(unit_price * units_in_stock)
+FROM products
+WHERE discontinued != 1;
+
+---Pattern matching LIKE
+% - placeholder(заполнитель) означающий 0, 1 и более символов
+_ - ровно один любой символ
+---пример
+LIKE 'U%' - строки, начинающиеся с U
+LIKE '%a' - заканчивается на а
+LIKE '%John%'
+LIKE 'J%n'
+LIKE '_oh_'
+LIKE '_oh%'
+---
+SELECT last_name, first_name
+FROM employees
+WHERE first_name LIKE '%n'
+
+---LIMIT
+---возвращает первые N строк
+---всегда в самом конце ставится
+SELECT product_name, unit_price
+FROM products
+WHERE discontinued != 1
+ORDER BY unit_price DESC
+LIMIT 10
