@@ -467,3 +467,22 @@ alert(soldiers[1].age); // 23
         Array.isArray(arr) проверяет, является ли arr массивом.
 
 Обратите внимание, что методы sort(), reverse() и splice() изменяют исходный массив.
+
+// ДЕСТРУКТУРИЗАЦИЯ
+const dict = {
+  duck: 'quack',
+  dog: 'wuff',
+  mouse: 'squeak',
+  humster: 'squeak'
+}
+
+const squeakyAnimals = []
+
+const res = Object.entries(dict)
+  .forEach(([key, value]) => {
+    if(value === 'squeak') {
+      squeakyAnimals.push(key)
+    }
+  })
+
+console.log(squeakyAnimals)

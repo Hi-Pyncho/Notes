@@ -201,3 +201,106 @@ FROM products
 WHERE discontinued != 1
 ORDER BY unit_price DESC
 LIMIT 10
+
+---CHECK ON  NULL
+SELECT ship_city, ship_region, ship_country
+FROM orders
+WHERE ship_region IS NULL
+---
+SELECT ship_city, ship_region, ship_country
+FROM orders
+WHERE ship_region IS NOT NULL
+
+---GROUP BY
+SELECT ship_country, COUNT(*)
+FROM orders
+WHERE freight > 50
+GROUP BY ship_country
+ORDER BY COUNT(*) DESC
+---
+---чтобы указать и название, нужно исп-ть JOIN
+SELECT category_id, SUM(units_in_stock)
+FROM products
+GROUP BY category_id
+ORDER BY SUM(units_in_stock) DESC
+LIMIT 5
+
+---постфильтрация HAVING
+---обычно после группировки
+---до ORDER BY, но после WHERE
+SELECT category_id, SUM(units_in_stock * unit_price)
+FROM products
+WHERE discontinued != 1
+GROUP BY category_id
+HAVING SUM(units_in_stock * unit_price) > 5000
+ORDER BY SUM(units_in_stock * unit_price) DESC
+
+---UNION
+---объединяет и устраняет дубликаты (если нужны дубликаты => UNION ALL)
+SELECT country
+FROM customers
+UNION 
+SELECT country
+FROM employees
+
+---INTERSECT
+---например, чтобы найти страны, в которых проживают и покупатели, и поставщики
+SELECT country
+FROM customers
+INTERSECT 
+SELECT country
+FROM suppliers
+
+---EXCEPT
+---выбрать страны, где проживают покупатели, но где не проживают поставщики
+---также устраняет дубликаты
+SELECT country
+FROM customers
+EXCEPT
+SELECT country
+FROM suppliers
+
+
+---СОЕДИНЕНИЯ между pk_key and fk_key
+---левая табличка - первая LEFT
+---правая табличка - вторая RIGHT
+---INNER JOIN (кратко JOIN) (в правой fk_key, из левой таблицы берутся только те данные, которые есть в fk_key правой таблицы)
+---LEFT OUTER JOIN (в результат попадают все данные левой таблицы, и часть правой)
+---FULL OUTER JOIN = LEFT + RIGHT (берутся все данные из двух таблиц)
+---алгоритм FULL => 1)inner join 2)left outer join 3)right outer join
+---CROSS JOIN (декартово соединение) - берется все данные левой таблицы и по порядку добавляются данные правой таблицы (исп-ся редко)
+---
+---если имена из разных таблиц совпадают, можно обращаться к столбцам через точку
+SELECT product_name, suppliers.company_name, units_in_stock
+FROM products
+INNER JOIN suppliers ON products.supplier_id = suppliers.supplier_id
+ORDER BY units_in_stock DESC
+---
+SELECT category_name, SUM(units_in_stock)
+FROM products
+INNER JOIN categories ON products.category_id = categories.category_id
+GROUP BY category_name
+ORDER BY SUM(units_in_stock) DESC
+LIMIT 5
+---
+SELECT category_name, SUM(units_in_stock * unit_price)
+FROM products
+INNER JOIN categories ON products.category_id = categories.category_id
+WHERE discontinued != 1
+GROUP BY category_name
+HAVING SUM(units_in_stock * unit_price) > 5000
+ORDER BY SUM(units_in_stock * unit_price) DESC
+---
+SELECT contact_name, company_name, phone, first_name, last_name, 
+	   title, order_date, product_name, ship_country, products.unit_price,
+	   quantity, discount
+FROM orders
+JOIN order_details ON orders.order_id = order_details.order_id
+JOIN products ON order_details.product_id = products.product_id
+JOIN customers ON orders.customer_id = customers.customer_id
+JOIN employees ON orders.employee_id = employees.employee_id
+WHERE ship_country = 'USA'
+
+
+
+
