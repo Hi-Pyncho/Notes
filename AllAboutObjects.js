@@ -97,6 +97,12 @@ const {role = 'user'} = obj
 //передача пустого объекта (или чего другого) по умолчанию, если такого нет в функции или объекте
 const {permission: {role = 'user'} = {}} = obj
 
+// Также можно передавать в функцию деструктурированный объект
+const profileUpdate = (profileData) => {
+  const { name, age, nationality, location } = profileData;
+  // do something with these variables
+}
+
 //передача деструктурированного объекта в функцию
 // с иницилизацией значений по умолчанию
 function connect({
