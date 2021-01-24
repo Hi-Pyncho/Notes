@@ -22,6 +22,7 @@
 
 - React JS 
   - React JS с Нуля до Профи. Полное руководство (Владилен Минин)
+  - React + Redux - Профессиональная Разработка (Юрий Бура) ( :muscle:**в процессе** :muscle:)
   - [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
   
 - NodeJS
