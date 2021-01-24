@@ -7,13 +7,6 @@ CREATE TABLE publisher
 	address text NOT NULL
 );
 
-CREATE TABLE book
-(
-	book_id integer PRIMARY KEY,
-	title text NOT NULL,
-	isbn varchar(32) NOT NULL
-)
-
 --СОЗДАНИЕ ТАБЛИЦЫ С РЕФЕРЕНСОМ НА ДРУГУЮ ТАБЛИЦУ
 CREATE TABLE book
 (
@@ -22,6 +15,18 @@ CREATE TABLE book
 	isbn varchar(32) NOT NULL,
 	fk_publisher_id integer REFERENCES publisher(publisher_id) NOT NULL
 )
+
+--создание таблицы на основе другой таблицы
+SELECT *
+INTO best_authors
+FROM author
+WHERE rating >= 4.5
+
+--если нужно добавить туда данных, польуземся таким синтаксисом
+INSERT INTO best_authors
+SELECT * 
+FROM author
+WHERE rating > 4
 
 --УДАЛЕНИЕ ТАБЛИЦ
 DROP TABLE publisher;
@@ -60,24 +65,24 @@ REFERENCES publisher(publisher_id)
 
 --МНОГИЕ КО МНОГИМ(пример)
 CREATE TABLE book 
-{
+(
 	book_id int PRIMARY KEY,
 	title text NOT NULL,
 	isbn text NOT NULL
-};
+);
 
 CREATE TABLE author
-{
+(
 	author_id int PRIMARY KEY,
 	full_name text NOT NULL,
 	rating real
-};
+);
 
 CREATE TABLE book_author
 (
 	book_id int REFERENCES book(book_id),
 	author_id int REFERENCES author(author_id),
-	
+	--здесь даем имя ограничению. если не задать, то генерируется автоматически
 	CONSTRAINT book_author_pkey PRIMARY KEY (book_id, author_id) --composite key
 );
 
@@ -178,21 +183,6 @@ SELECT SUM(unit_price * units_in_stock)
 FROM products
 WHERE discontinued != 1;
 
----Pattern matching LIKE
-% - placeholder(заполнитель) означающий 0, 1 и более символов
-_ - ровно один любой символ
----пример
-LIKE 'U%' - строки, начинающиеся с U
-LIKE '%a' - заканчивается на а
-LIKE '%John%'
-LIKE 'J%n'
-LIKE '_oh_'
-LIKE '_oh%'
----
-SELECT last_name, first_name
-FROM employees
-WHERE first_name LIKE '%n'
-
 ---LIMIT
 ---возвращает первые N строк
 ---всегда в самом конце ставится
@@ -261,46 +251,54 @@ SELECT country
 FROM suppliers
 
 
----СОЕДИНЕНИЯ между pk_key and fk_key
----левая табличка - первая LEFT
----правая табличка - вторая RIGHT
----INNER JOIN (кратко JOIN) (в правой fk_key, из левой таблицы берутся только те данные, которые есть в fk_key правой таблицы)
----LEFT OUTER JOIN (в результат попадают все данные левой таблицы, и часть правой)
----FULL OUTER JOIN = LEFT + RIGHT (берутся все данные из двух таблиц)
----алгоритм FULL => 1)inner join 2)left outer join 3)right outer join
----CROSS JOIN (декартово соединение) - берется все данные левой таблицы и по порядку добавляются данные правой таблицы (исп-ся редко)
----
----если имена из разных таблиц совпадают, можно обращаться к столбцам через точку
-SELECT product_name, suppliers.company_name, units_in_stock
-FROM products
-INNER JOIN suppliers ON products.supplier_id = suppliers.supplier_id
-ORDER BY units_in_stock DESC
----
-SELECT category_name, SUM(units_in_stock)
-FROM products
-INNER JOIN categories ON products.category_id = categories.category_id
-GROUP BY category_name
-ORDER BY SUM(units_in_stock) DESC
-LIMIT 5
----
-SELECT category_name, SUM(units_in_stock * unit_price)
-FROM products
-INNER JOIN categories ON products.category_id = categories.category_id
-WHERE discontinued != 1
-GROUP BY category_name
-HAVING SUM(units_in_stock * unit_price) > 5000
-ORDER BY SUM(units_in_stock * unit_price) DESC
----
-SELECT contact_name, company_name, phone, first_name, last_name, 
-	   title, order_date, product_name, ship_country, products.unit_price,
-	   quantity, discount
-FROM orders
-JOIN order_details ON orders.order_id = order_details.order_id
-JOIN products ON order_details.product_id = products.product_id
-JOIN customers ON orders.customer_id = customers.customer_id
-JOIN employees ON orders.employee_id = employees.employee_id
-WHERE ship_country = 'USA'
+---DDL (data definition language)
+---часть синтаксиса, отвечающая за структуру таблицы
+CREATE TABLE table_name
+ALTER TABLE table_name
+...ADD COLUMN column_name data_type
+...RENAME TO new_talbe_name
+...RENAME old_column_name TO new_column_name
+...ALTER COLUMN column_name SET DATA TYPE data_type
+...DROP COLUMN column_name
+DROP TABLE table_name
+TRUNCATE TABLE table_name ---(удаляет не таблицы, а все данные из таблицы)
+--когда мы пишем DELETE, то СУБД пишет логи по удалениям, по TRUNCATE не пишет - жесткая команда
+-- но не может удалить данные, на которые есть ссылки из других таблиц
+--не рестартит identity (если был прописан тип данных serial, не сбросит, а продолжит)
+--чтобы сбросил, нужно сделать так
+TRUNCATE TABLE table_name RESTART IDENTITY
+
+
+---Логические ограничения CHECK
+ALTER TABLE book
+ADD COLUMN price decimal CONSTRAINT CHK_book_price CHECK (price >= 0)
 
 
 
 
+--UPDATE
+UPDATE author
+SET full_name = 'Lias', rating = 5
+WHERE author_id = 1
+
+--DELETE
+DELETE FROM author
+WHERE rating < 4.5
+--удалить все строки (пишет логи)
+--TRUNCATE чуть быстрее и логи не пишет
+DELETE FROM author
+
+--RETURNING (что-то вроде логов)
+--так мы можем в output отправлять нужные данные
+INSERT INTO book (title, isbn, publisher_id)
+VALUES ('title', 'isbn', 3)
+RETURNING book_id
+--также можно исполнять при UPDATE, DELETE...
+UPDATE author
+SET full_name = 'walter', rating = 5
+WHERE author_id = 1
+RETURNING *
+--
+DELETE FROM author
+WHERE author_id = 1
+RETURNING *

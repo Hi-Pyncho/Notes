@@ -476,3 +476,26 @@ const maxStockProfit2 = arr => {
 
 
 let array = [32, 46, 26, 38, 40, 48, 42];
+
+
+/////////////////////////////////////////////////////////////////////////////////
+//рекурсия - если кратко, то когда функция вызывает саму себя
+function func() {
+  if(/*basic case*/) {
+    return something
+  } else { /*recursive case*/
+    func();
+  }
+}
+
+// factorial (!)
+// 4! = 4 * 3 * 2 * 1 = 24
+// 3! = 3 * 2 * 1 = 6
+
+function factorial(num) {
+  if(num === 1) {
+    return num;
+  } else {
+    return num * factorial(num -1);
+  }
+}

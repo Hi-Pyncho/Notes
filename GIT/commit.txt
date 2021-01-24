@@ -1,0 +1,12 @@
+GIT COMMIT
+git commit -a -m 'commit message'
+Это тоже самое что последовательное (git add .) + (git commit -m 'message')
+Но это добавляет только modified файлы в отслеживаемую зону и коммит. Не добавляет untraked файлы
+
+git commit --amend -m 'new commit message'
+Дополняет последний коммит, добавляя в него свежие изменения. Меняет сообщение коммита и хеш коммита. Новый коммит не создается!
+Можно совместить параметры
+git commit -a --amend -m 'new commit message'
+также можно без параметра сообщения
+git commit -a --amend
+git commit --amend --no-edit (добавить изменения в последний коммит без изменения сообщения коммита)

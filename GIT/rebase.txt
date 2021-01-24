@@ -1,0 +1,19 @@
+REBASE
+Берет все коммиты из одной ветки и применяет поверх другой. Создается новый коммит с rebase
+Можно смержить с той веткой, на которую делали rebase
+git rebase master (текущую ветку передвигает после master)
+git rebase -i master (выбирает несколько коммитов и передвигает после master)
+git checkout master; git merge rebaseBranch
+Можно отменить git rebase --abort
+При кофликте решаем конфликт, потом
+git add fileName
+git rebase --continue (или  --skip - пропускает текущий коммит)
+git checkout master; git rebase branchName (делает ветку плоской и поднимаем master)
+Также git сохраняет ссылку на предыдущее положение HEAD
+cat .git/ORIG_HEAD
+И уже совершенный rebase можно отменить и вернуться обратно
+git reset --hard ORIG_HEAD (но тут не всегда работает, так как HEAD мог перемещаться)
+Или же
+git reflog branchName -1 (покажет последнее изменение, что rebase branchName произошел в другую ветку)
+git show --quiet branchName@{1} (покажет туда, где был предудщий HEAD перед rebase)
+git reset --hard feature@{1} (отменит rebase и вернется к предыдущему состоянию)
