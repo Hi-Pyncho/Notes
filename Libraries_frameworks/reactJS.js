@@ -9,3 +9,9 @@ const el = React.createElement('h1', null, 'hello!')
 //грубо говоря, этот метод превращает JSX элемент в
 // объект разметки, который отображается на странице
 ReactDOM.render(el, document.getElementById('root'))
+
+//называть компоненты с большой буквы
+// так React понимает, что это компонент, а не тэг
+
+//если элемент возвращает null/undefined/true/false, то JSX игнорирует
+// и не отрисовывает
