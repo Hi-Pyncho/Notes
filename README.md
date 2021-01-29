@@ -13,7 +13,7 @@
   - [Linux/GIT/Hosting](https://fructcode.com/ru/certificates/96614432e26bad4534ae31b3fdaa4b17/ru/)
 
 - Git/GitHub
-  - Наиль Алишев(Полный курс для начинающих и не только)
+  - Наиль Алишев (Полный курс для начинающих и не только)
   - [Learn GIT](https://learngitbranching.js.org)
   - Скринкасты от HTML-Academy
 
@@ -22,6 +22,7 @@
 
 - React JS 
   - React JS с Нуля до Профи. Полное руководство (Владилен Минин)
+  - React + Redux - Профессиональная Разработка (Юрий Бура) ( :muscle:**в процессе** :muscle:)
   - [IT-KAMASUTRA](https://www.youtube.com/channel/UCTW0FUhT0m-Bqg2trTbSs0g)
   
 - NodeJS
@@ -31,7 +32,7 @@
   - Профессиональный HTML и CSS (уровень 1, 2)
   - Профессиональный Javascript (уровень 1, 2)
  
-- Практический JavaScript(Лущенко Александр)
+- Практический JavaScript (Лущенко Александр)
 
 - Eric Traub
   - Learning Algorithms in JavaScript from Scratch
