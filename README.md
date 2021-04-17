@@ -52,6 +52,8 @@
 - Роберт Мартин. Чистый код. Cоздание, анализ и рефакторинг
 - Ч.Петцольд. Код. Тайный язык информатики
 - Кит Грант. CSS для профи
+- Владстон Феррейра Фило. Теоретический минимум по Computer Science
+- Ahmad Shadeed. Master The Skill Of Debugging CSS
 
 ### Онлайн курсы, тренажеры
 - HTML-Academy ([Тренажеры](https://htmlacademy.ru/profile/id1274543))
