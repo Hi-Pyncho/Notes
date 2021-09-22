@@ -29,6 +29,7 @@
 
 - [fancybox](https://fancyapps.com/fancybox/)
 - [popper](https://popper.js.org/)
+- [sweetAlert](https://sweetalert2.github.io/)
 
 ### Карты
 
