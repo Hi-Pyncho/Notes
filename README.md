@@ -16,6 +16,7 @@
   - Наиль Алишев (Полный курс для начинающих и не только)
   - [Learn GIT](https://learngitbranching.js.org)
   - Скринкасты от HTML-Academy
+  - [Курс от Hexlet](https://ru.hexlet.io/courses/intro_to_git)
 
 - MySQL/PostgreSQL
   - Практический курс для новичков по SQL и PostgreSQL (Илья Фофанов) ( :muscle:**в процессе** :muscle:)
