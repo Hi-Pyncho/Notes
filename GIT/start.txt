@@ -1,5 +1,10 @@
 КОМАНДЫ GIT
 
+ПРИ СОЗДАНИИ НОВОГО РЕПОЗИТОРИЯ
+git branch -M main
+git remote add origin https://github.com/Hi-Pyncho/test.git
+git push -u origin main
+
 ПЕРВОНАЧАЛЬНАЯ НАСТРОЙКА
 git config --global user.name "[имя]"
 git config --global user.email "[адрес электронной почты]"
