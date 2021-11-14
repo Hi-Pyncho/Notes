@@ -1,0 +1,31 @@
+## ВЕТКИ
+
+`git branch some-feature` (создать ветку с именем)  
+`git branch` (список локальных веток)  
+`git branch -v` (список локальных веток + инфа)  
+`git branch -d` branchName (удаление ветки)  
+`git branch -D` branchName (удаление ветки, даже не смерженной ни с чем)  
+`git branch -r` (получим список remote веток)  
+`git branch -m newBranchName` (переименовать текущую ветку)  
+
+`git checkout -b branchName` (создать и переместить на новую ветку)
+
+`git merge nameBranch` (находясь на ветке master)  
+`git merge nameBranch -m 'commit message'`  
+`git merge --abort` (отменяет слияние)  
+
+Если в нашей ветке файл удален, а в сливаемой нет, то при конфликте можно либо оставить удаленным, либо восстановить его 
+`git add fileName`
+
+fast-forward merge (когда в master не было изменений, без конфликтов и когда git легко сливает ветки, не создается отдельный коммит для слияния merge commit)
+
+`git pull` - добавит в локальные remote ветки все недостающие ветки с репозитория  
+чтобы продолжить развивать конкретную ветку, выполняем
+`git checkout branchName` (создается новая ветка и туда сливаются коммиты из origin/branchName)  
+
+`git remote show origin` (свяжется с репозиторием, покажет списком remote, локальные ветки, проверит, есть ли различия и нужно ли обновить)
+
+`git push --delete origin coolFunction` (удалит remote ветку с репозитория)
+`git push origin :oldBranch` (удалит remote ветку)
+
+`git push origin cmments:comments` (отправит текущую ветку cmments в remote ветку comments)

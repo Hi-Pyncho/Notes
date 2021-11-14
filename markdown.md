@@ -37,18 +37,41 @@ _You **can** combine them_
 
 <!-- images -->
 ![GitHub Logo](/images/logo.png)
+
 Format: ![Alt Text](url)
 
 <!-- links -->
 http://github.com - automatic!
+
 [GitHub](http://github.com)
+
+or another way
+[go here][link1]
+
+and then [go here][link2]
+
+[link1]: www.google.com
+[link2]: www.github.com
 
 <!-- blockquotes -->
 
 As Termitanor said:
 
 > I'll be back
+> 
 > Bye
+
+<!-- Paragraphs soft-break -->
+Do I contradict myself?(space)(space)
+Very well then I contradict myself,(space)(space)
+(I am large, I contain multitudes.)(space)(space)
+
+<!-- Paragraphs hard-break -->
+Do I contradict myself?
+
+Very well then I contradict myself,
+
+(I am large, I contain multitudes.)
 
 <!-- inline code -->
 I think you should use an
