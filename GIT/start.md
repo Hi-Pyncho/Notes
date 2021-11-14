@@ -4,6 +4,11 @@
 `git config --global user.name "[имя]"`   
 `git config --global user.email "[адрес электронной почты]"`
 
+### ПРИ СОЗДАНИИ НОВОГО РЕПОЗИТОРИЯ
+`git branch -M main`  
+`git remote add origin https://github.com/Hi-Pyncho/test.git`  
+`git push -u origin main`
+
 -----------------------------------------------------
 ### HELP
 `git help commandName` (покажет справку по команде)  
