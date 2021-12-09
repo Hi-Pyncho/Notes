@@ -45,3 +45,11 @@
 
 - [d3js](https://d3js.org/)
 - [chartjs](https://www.chartjs.org/)
+
+### Работа с формами
+
+- [garlicjs](http://garlicjs.org/)
+
+### Работа со state
+
+- [onchangejs](https://github.com/sindresorhus/on-change)
