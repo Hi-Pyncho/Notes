@@ -54,3 +54,7 @@
 ### Работа со state
 
 - [onchangejs](https://github.com/sindresorhus/on-change)
+
+### Работа с языками
+
+- [i18next](https://www.i18next.com/)
