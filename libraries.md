@@ -9,6 +9,7 @@
 
 - [jqueryvalidation](https://jqueryvalidation.org/)
 - [Just-validate](https://github.com/horprogs/Just-validate)
+- [yup](https://github.com/jquense/yup#usage)
 
 ### Маски для форм
 
