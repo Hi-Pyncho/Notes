@@ -58,3 +58,7 @@
 ### Работа с языками
 
 - [i18next](https://www.i18next.com/)
+
+### React
+
+- [classnames](https://github.com/JedWatson/classnames)
