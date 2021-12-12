@@ -51,6 +51,8 @@
 - Наглядный CSS (Грег Сидельников)
 
 ### Онлайн курсы, тренажеры
+- Hexlet ([Профиль](https://ru.hexlet.io/u/hi-pyncho))
+
 - HTML-Academy ([Тренажеры](https://htmlacademy.ru/profile/id1274543))
 
 - FreeCodeCamp ([Профиль](https://www.freecodecamp.org/hi-pyncho))
