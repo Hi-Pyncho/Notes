@@ -1,7 +1,11 @@
 ## GIT CLEAN
-В отличие от RESET позволяет удалять untraked файлы
+В отличие от RESET позволяет удалять untraked файлы  
 `git clean -n` (покажет какие файлы будут удалены)  
-`git clean -f `(удалит untraked файлы) 
+`git clean -f `(удалит untraked файлы)  
+`git clean -d` (удалит директории)  
+`git clean -x` (удалит даже те, что в .gitignore)
+
+Это для неотслеживаемых файлов. Для отслеживаемых команды `git reset --hard`, `git checkout -f`  
 
 -----------------------------------------------------
 ## GIT REMOVE  

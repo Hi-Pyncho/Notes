@@ -2,7 +2,7 @@
 *This text will be italic*
 _This will also be italic_
 
-**This text will be bold**
+**This text will be bold**  
 __This will also be bold__
 
 _You **can** combine them_
@@ -14,6 +14,10 @@ _You **can** combine them_
 # This is an <h1> tag
 ## This is an <h2> tag
 ###### This is an <h6> tag
+
+<!-- Horizontal Line -->
+___
+---
 
 
 <!-- numered lists -->
@@ -36,9 +40,9 @@ _You **can** combine them_
   - And this
 
 <!-- images -->
-![GitHub Logo](/images/logo.png)
+![GitHub Logo](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+<img src='https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png' width='100'>
 
-Format: ![Alt Text](url)
 
 <!-- links -->
 http://github.com - automatic!
@@ -53,6 +57,10 @@ and then [go here][link2]
 [link1]: www.google.com
 [link2]: www.github.com
 
+<!-- images like links -->
+
+[![link image](https://www.reviewpro.com/wp-content/uploads/2019/06/Google-logo.jpg)](https://www.google.com/)
+
 <!-- blockquotes -->
 
 As Termitanor said:
@@ -60,6 +68,7 @@ As Termitanor said:
 > I'll be back
 > 
 > Bye
+>> inner blockquotes
 
 <!-- Paragraphs soft-break -->
 Do I contradict myself?(space)(space)
@@ -97,3 +106,17 @@ First Header | Second Header
 ------------ | -------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
+
+| Current color | Current State | Next State |
+| :---- | :---- | :---- |
+| green | yellow | red |
+
+<!-- Details and summary  -->
+
+<details>
+  <summary>Section header</summary>
+  Section body text.
+
+  - list item
+  - list item
+</details>
