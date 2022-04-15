@@ -9,6 +9,7 @@
 
 - [jqueryvalidation](https://jqueryvalidation.org/)
 - [Just-validate](https://github.com/horprogs/Just-validate)
+- [yup](https://github.com/jquense/yup#usage)
 
 ### Маски для форм
 
@@ -45,3 +46,19 @@
 
 - [d3js](https://d3js.org/)
 - [chartjs](https://www.chartjs.org/)
+
+### Работа с формами
+
+- [garlicjs](http://garlicjs.org/)
+
+### Работа со state
+
+- [onchangejs](https://github.com/sindresorhus/on-change)
+
+### Работа с языками
+
+- [i18next](https://www.i18next.com/)
+
+### React
+
+- [classnames](https://github.com/JedWatson/classnames)
