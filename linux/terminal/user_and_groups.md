@@ -20,7 +20,7 @@ userdel
 usermod
 ```
 
-`chown [user]:[group] file|dir` - сменить пользователя/группу у файла или папки
+`chown [user]:[group] file|dir` - сменить пользователя/группу у файла или папки 
 
 В debian системах есть высокоуровневые команды `adduser, deluser`
 
