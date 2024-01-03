@@ -35,6 +35,22 @@ const regexp = /template/;
 ## квантификаторы
 `/\d{2}\.\d{2}\.\d{2}/` === `/\d\d\.\d\d\.\d\d/`
 
+## difference/substractions
+`--` - перед выражением  
+`'Фраза на русском, latin phrase'.match(/[\p{L}]+/vg) // ['Фраза', 'на', 'русском', 'latin', 'phrase']`
+`'Фраза на русском, latin phrase'.match(/[\p{L}--\p{Script=Latin}]+/vg) // ['Фраза', 'на', 'русском']`
+
+## intersection
+`&&`  
+`'Фраза на русском, Latin phrase'.match(/[\p{L}&&\p{Script=Cyrillic}&&\p{Lu}]+/vg) // ['Ф']`
+
+## nested character classes
+`'Фраза на русском, Latin phrase'.match(/[[\p{L}&&\p{Script=Cyrillic}]--\p{Ll}]+/vg) // ['Ф']`
+
+## strings in character classes
+`\q{}`  
+`'Фраза на русском, Latin phrase'.match(/[\q{на|phrase}]+/vg) // ['на', 'phrase']`
+
 ## жадные квантификаторы(стараются наибольшее количество раз повторить):
 `{n}` - повторить n раз
 `/\d{3,4}/` - найти где цифра повторяется от 3 до 4 раз
@@ -63,7 +79,10 @@ const regexp = /template/;
 `y` => для поиска на заданной позиции lastIndex (если находит то останавливается)
 `u` => поддержка юникода и юникодных свойств
 
-## юникодные свойства
+## [юникодные свойства](https://tc39.es/ecma262/multipage/text-processing.html#table-nonbinary-unicode-properties)
+[general category property list](https://unicode.org/reports/tr18/#General_Category_Property)
+[property value aliases list](https://unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt)
+
 `/\p{Sc}/gu` => ищет символы валюты. По умолчанию не поддерживаются. поэтому нужно указать флаг u
 
 
