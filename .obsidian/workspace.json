@@ -1,0 +1,275 @@
+{
+  "main": {
+    "id": "73e8d0cdaab044e1",
+    "type": "split",
+    "children": [
+      {
+        "id": "9631e3f39766ed91",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a7f20a525bec8caa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "GIT/start.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "start"
+            }
+          },
+          {
+            "id": "70d6cfcaf71e9b2b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Home.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Home"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "08e8fe49975c897a",
+    "type": "split",
+    "children": [
+      {
+        "id": "3d16bb2c051ec82e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ddfee719be3c4b64",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "92459e9b97c13d15",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "nvim",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "be00b23c0ea7cd23",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Закладки"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 294.5
+  },
+  "right": {
+    "id": "c4c0518aee869f13",
+    "type": "split",
+    "children": [
+      {
+        "id": "0fd0e01337341076",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c6fc8676a92cbed1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "murich/хранение идентификаторов.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Обратные ссылки для хранение идентификаторов"
+            }
+          },
+          {
+            "id": "156689f807a915e0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "murich/хранение идентификаторов.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Исходящие ссылки из хранение идентификаторов"
+            }
+          },
+          {
+            "id": "5743ea9ece985470",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "02ffb26300bb513d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Untitled.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Untitled"
+            }
+          },
+          {
+            "id": "df3e5a076c7e60c0",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "e4e0f286b8419a7e",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "3318d5e643b8efef",
+            "type": "leaf",
+            "state": {
+              "type": "file-properties",
+              "state": {
+                "file": "GIT/start.md"
+              },
+              "icon": "lucide-info",
+              "title": "File properties for start"
+            }
+          }
+        ],
+        "currentTab": 6
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "digitalgarden:Digital Garden Publication Center": false
+    }
+  },
+  "active": "a7f20a525bec8caa",
+  "lastOpenFiles": [
+    "TODO.md",
+    "GIT/start.md",
+    "games/механики/0. общие.md",
+    "GIT/rebase.md",
+    "GIT/other.md",
+    "GIT/cherry_pick.md",
+    "GIT/checkout.md",
+    "GIT/branches.md",
+    "GIT/aliases.md",
+    "GIT/add__remove.md",
+    "GIT/remote_repo.md",
+    "browser/devtools.md",
+    "browser",
+    "programming-paradigms/00.FP.md",
+    "programming-paradigms/00.FSM.md",
+    "web-components/style.md",
+    "web-components/boilerplate.md",
+    "vue/VUEUSE useful.md",
+    "vue/createSignal.md",
+    "vue/1. notes.md",
+    "vue/0. Perfomance.md",
+    "other/notes.md",
+    "other/markdown.md",
+    "other/libraries.md",
+    "other/00.htaccess.md",
+    "nvim/vscode-neovim.md",
+    "nvim/terminal moves.md",
+    "games/gdevelop/Без названия.canvas",
+    "Untitled.canvas",
+    "Без названия.canvas",
+    "lua",
+    "files/LSP structure 2 1.png",
+    "files/LSP structure 2.png",
+    "linux/nvim/lazyvim.md~",
+    "files/Pasted image 20250121204932.png",
+    "nvim",
+    "tmux",
+    "files/Pasted image 20241102173553.png",
+    "files/Pasted image 20241028160506.png",
+    "games/cocos-creator",
+    "files/Pasted image 20240808194548.png",
+    "files/Pasted image 20240721104905.png",
+    "files/Pasted image 20240721104313.png",
+    "files/Pasted image 20240721104246.png",
+    "files/Pasted image 20240721104207.png",
+    "design-patterns/structural (структурные)",
+    "design-patterns/creational (порождающие)",
+    "design-patterns/behavior (поведенческие)",
+    "design-patterns"
+  ]
+}

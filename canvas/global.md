@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 # Глобальные настройки канваса
 
 ## GlobalCompositeOperation

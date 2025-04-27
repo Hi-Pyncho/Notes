@@ -5,9 +5,7 @@ const regexp = new RegExp('template', 'flags')
 const regexp = /template/;
 ```
 
-
 `/./` - любой символ кроме \n
-
 ## Символьные классы
 `\d` => цифровой символ [0-9]
 `\D` => не цифровой символ любой [^0-9]
@@ -82,6 +80,7 @@ const regexp = /template/;
 ## [юникодные свойства](https://tc39.es/ecma262/multipage/text-processing.html#table-nonbinary-unicode-properties)
 [general category property list](https://unicode.org/reports/tr18/#General_Category_Property)
 [property value aliases list](https://unicode.org/Public/UCD/latest/ucd/PropertyValueAliases.txt)
+[unicode list](https://compart.com/en/unicode/block/U+0000)
 
 `/\p{Sc}/gu` => ищет символы валюты. По умолчанию не поддерживаются. поэтому нужно указать флаг u
 
@@ -145,7 +144,7 @@ let result = str.replace(fixRegex, replaceText); // three two one
 
 ## скобочные группы
 все, что в скобочной группе попадает в результат. чтобы не попадало - (?:)
-`()` => скобоыне группы
+`()` => скобочные группы
 `(?:)` => скобочная группа исключающая из запоминания
 `\N` => обратная ссылка в шаблоне, где N - номер скобочной группы
 `'/[a-f\d]{2}([-:])(?:[a-f\d]{2}\1){4}[a-f\d]{2}/gi'`
@@ -153,9 +152,6 @@ let result = str.replace(fixRegex, replaceText); // three two one
 `(?<name>)` - именованная скобочная группа
 `(\k<name>)` - обратная ссылка в шаблоне
 `'/[a-f\d]{2}(?<separator>[-:])(?:[a-f\d]{2}\k<separator>){4}[a-f\d]{2}/gi'`
-
-
-
 
 ## также у regexp есть два метода
 `exec(str)` - по очереди вызывает части итератора, если есть флаг _g_
@@ -247,5 +243,3 @@ console.log(string.match(regexp))
 Соответственно, `^` означает, что поиск начинается с начала строки.
 И если первый `(?=)` завершается успехом, срабатывает второй `(?=)` - опять с начала строки, а потом и третий - тоже с начала строки.
 А после завершения успехом всех трёх `(?=)`, срабатывает - опять же, с начала строки - `[a-zA-Z\d]{6,}$`
-  
-	

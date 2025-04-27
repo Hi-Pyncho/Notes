@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"5fe0935029db13b6","type":"text","text":"### behaviors","x":-500,"y":-80,"width":240,"height":60,"color":"#eaaeae"},
+		{"id":"afa9d661a115c7d9","type":"text","text":"### variables","x":-501,"y":0,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"7f9f35a9e033af7d","type":"text","text":"### timer","x":-500,"y":80,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"8c22fac500304a4e","type":"text","text":"### camera","x":-501,"y":-160,"width":240,"height":60,"color":"#eaaeae"},
+		{"id":"7e14719715e4acf8","type":"text","text":"### tweens","x":-500,"y":160,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"f8e199d6b1a84743","type":"text","text":"### storage","x":-240,"y":-160,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"7e92dc55bc1da8db","type":"text","text":"# **CORE**","x":-341,"y":-260,"width":160,"height":60,"color":"1"},
+		{"id":"af7dc499eebcbd20","type":"text","text":"### layers","x":-240,"y":-80,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"e0daad142c678a43","type":"text","text":"### light","x":-240,"y":0,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"31b44fa4d81a0f14","type":"text","text":"### particles","x":-240,"y":80,"width":241,"height":60,"color":"#eaaeae"},
+		{"id":"219b2ca6d303e345","type":"text","text":"# **EXTENSIONS**","x":141,"y":-260,"width":340,"height":60,"color":"5"},
+		{"id":"9713cf8db651f5c8","type":"text","text":"### magnetic effect","x":70,"y":-160,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"190a18c6adf9091a","type":"text","text":"### boids movement","x":70,"y":-80,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"24599d484f3a7bf5","type":"text","text":"### stick objects","x":70,"y":0,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"e17ec7b15726add1","type":"text","text":"### draggable","x":70,"y":80,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"058c513bc515c464","type":"text","text":"### faceforward","x":340,"y":-160,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"36f075d2830a894a","type":"text","text":"### orbit around","x":340,"y":-80,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"7f49f8eba2de33a5","type":"text","text":"### YSort","x":340,"y":0,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"9dd7314689897a87","type":"text","text":"### Char-r animator","x":340,"y":80,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"99ac0df55b4a54b6","type":"text","text":"### screen wrap\n","x":70,"y":160,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"7286db35e0beeb00","type":"text","text":"### stay on screen\n","x":340,"y":160,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"bcc77bcab73df273","type":"text","text":"### advanced platformer movement\n\n","x":70,"y":240,"width":511,"height":60,"color":"#b1f6fb"},
+		{"id":"6a695e077e0230db","type":"text","text":"### camera shake\n","x":70,"y":320,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"c6ef87e18ce763a9","type":"text","text":"### snap to grid\n","x":340,"y":320,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"d54c2bea9a0724da","type":"text","text":"### shake object\n","x":70,"y":400,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"534600f1f990a842","type":"text","text":"### rectangular movement\n","x":70,"y":480,"width":511,"height":60,"color":"#b1f6fb"},
+		{"id":"e8dd84e2bcd4ae32","type":"text","text":"### health\n","x":340,"y":400,"width":241,"height":60,"color":"#b1f6fb"},
+		{"id":"f40e9741e3188c2e","type":"text","text":"### smooth camera\n","x":74,"y":560,"width":241,"height":60,"color":"#b1f6fb"}
+	],
+	"edges":[]
+}

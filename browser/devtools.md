@@ -1,0 +1,16 @@
+https://devtoolstips.org/tips/en/detect-3p-cookies/
+https://devtoolstips.org/tips/en/replay-xhr/
+https://devtoolstips.org/tips/en/inspect-devtools-with-devtools/
+https://devtoolstips.org/tips/en/convert-image-to-data-url/
+https://devtoolstips.org/tips/en/download-all-images/
+https://devtoolstips.org/tips/en/execute-commands/
+https://devtoolstips.org/tips/en/console-table-group-assert/
+https://devtoolstips.org/tips/en/style-console-messages/
+https://devtoolstips.org/tips/en/find-why-css-property-is-overridden/
+https://devtoolstips.org/tips/en/detect-unused-code/
+https://devtoolstips.org/tips/en/list-all-event-listeners/
+https://devtoolstips.org/tips/en/debug-popups-on-hover/
+https://devtoolstips.org/tips/en/use-logpoints/
+https://devtoolstips.org/tips/en/debug-js-hover/
+https://devtoolstips.org/tips/en/monitor-element-events/
+https://devtoolstips.org/tips/en/highlighted-repainted-areas/
