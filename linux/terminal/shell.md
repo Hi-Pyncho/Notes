@@ -1,0 +1,1 @@
+`chsh -s <path-to-shell> / chsh -s $(which zsh)` - сменить оболочку

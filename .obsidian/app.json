@@ -1,0 +1,11 @@
+{
+  "livePreview": false,
+  "newFileLocation": "current",
+  "newLinkFormat": "absolute",
+  "attachmentFolderPath": "files",
+  "vimMode": true,
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "tabSize": 2,
+  "showLineNumber": true
+}

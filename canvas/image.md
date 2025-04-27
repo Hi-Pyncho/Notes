@@ -32,7 +32,7 @@ window.onload = function() {
 ctx.createPattern(image, 'repeat | repeat-x | repeat-y | no-repeat');
 ```
 
-### Прммеры
+### Примеры
 ```js
 const img = document.getElementById('lamp');
 const pattern = ctx.createPattern(img, 'repeat');
