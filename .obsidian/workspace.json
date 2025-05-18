@@ -4,35 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9631e3f39766ed91",
+        "id": "c5c325c3f9a35ca7",
         "type": "tabs",
         "children": [
           {
-            "id": "a7f20a525bec8caa",
+            "id": "e9f95e62cc9fd7fa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GIT/start.md",
+                "file": "GIT/commit.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "start"
-            }
-          },
-          {
-            "id": "70d6cfcaf71e9b2b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Home.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Home"
+              "title": "commit"
             }
           }
         ]
@@ -195,10 +181,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "GIT/start.md"
+                "file": "GIT/commit.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for start"
+              "title": "File properties for commit"
             }
           }
         ],
@@ -216,12 +202,13 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false,
-      "digitalgarden:Digital Garden Publication Center": false
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "a7f20a525bec8caa",
+  "active": "e9f95e62cc9fd7fa",
   "lastOpenFiles": [
+    "libraries/xstate/Шпаргалка синтаксиса.md",
+    "Home.md",
     "TODO.md",
     "GIT/start.md",
     "games/механики/0. общие.md",
@@ -247,8 +234,6 @@
     "other/markdown.md",
     "other/libraries.md",
     "other/00.htaccess.md",
-    "nvim/vscode-neovim.md",
-    "nvim/terminal moves.md",
     "games/gdevelop/Без названия.canvas",
     "Untitled.canvas",
     "Без названия.canvas",
