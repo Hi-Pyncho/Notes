@@ -42,12 +42,29 @@ sudo ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 ## Locales
 ```sh
 # раскомментировать локали
-vim /etc/locale.gen
+sudo nvim /etc/locale.gen
 
 # сгенерировать локали
-locale-gen
+sudo locale-gen
 
 # добавить локали в конфиг
-vim /etc/locale.conf
+sudo nvim /etc/locale.conf
 # LANG=en_US.UTF-8
+```
+
+## Keybord layouts
+```sh
+# если нет, создать папку
+sudo mkdir -p /etc/X11/xorg.conf.d/
+
+vs /etc/X11/xorg.conf.d/00-keyboard.conf
+```
+и добавить туда
+```
+Section "InputClass"
+  Identifier "system-keyboard"
+  MatchIsKeyboard "on"
+  Option "Xkblayout" "us,ru"
+  Option "XkbOptions" "grp:alt_shift_toggle"
+EndSection
 ```

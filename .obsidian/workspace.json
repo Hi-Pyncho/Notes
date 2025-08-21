@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "c5c325c3f9a35ca7",
+        "id": "b781668009501f49",
         "type": "tabs",
         "children": [
           {
-            "id": "e9f95e62cc9fd7fa",
+            "id": "77fd7cbfd83710b8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "GIT/commit.md",
-                "mode": "source",
+                "file": "linux/terminal/files/rsync.md",
+                "mode": "preview",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "commit"
+              "title": "rsync"
             }
           }
         ]
@@ -181,10 +181,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "GIT/commit.md"
+                "file": "linux/terminal/files/rsync.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for commit"
+              "title": "File properties for rsync"
             }
           }
         ],
@@ -205,8 +205,32 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "e9f95e62cc9fd7fa",
+  "active": "77fd7cbfd83710b8",
   "lastOpenFiles": [
+    "C/arrays.md~",
+    "linux/terminal/tr.md~",
+    "linux/terminal/tr.md",
+    "linux/terminal/lsof.md~",
+    "linux/terminal/lsof.md",
+    "linux/terminal/files/rsync.md~",
+    "C/arrays.md",
+    "linux/terminal/files/rsync.md",
+    "C/pointers.md~",
+    "C/4913",
+    "C/memory.md",
+    "linux/system/udev.md~",
+    "C/memory.md~",
+    "img/2025-07-31-15-15-06.png",
+    "img",
+    "img/2025-07-31-15-12-36.png",
+    "img/2025-07-31-15-12-11.png",
+    "C/sizeof.md",
+    "img/2025-07-31-13-36-24.png",
+    "C/sizeof.md~",
+    "C/files/2hAib4n-1280x695.png",
+    "C/files/4oLNm6x.png",
+    "C/files",
+    "files/4oLNm6x.png",
     "libraries/xstate/Шпаргалка синтаксиса.md",
     "Home.md",
     "TODO.md",
@@ -221,40 +245,16 @@
     "GIT/add__remove.md",
     "GIT/remote_repo.md",
     "browser/devtools.md",
-    "browser",
     "programming-paradigms/00.FP.md",
     "programming-paradigms/00.FSM.md",
     "web-components/style.md",
     "web-components/boilerplate.md",
     "vue/VUEUSE useful.md",
-    "vue/createSignal.md",
-    "vue/1. notes.md",
-    "vue/0. Perfomance.md",
-    "other/notes.md",
-    "other/markdown.md",
-    "other/libraries.md",
-    "other/00.htaccess.md",
     "games/gdevelop/Без названия.canvas",
     "Untitled.canvas",
     "Без названия.canvas",
-    "lua",
     "files/LSP structure 2 1.png",
     "files/LSP structure 2.png",
-    "linux/nvim/lazyvim.md~",
-    "files/Pasted image 20250121204932.png",
-    "nvim",
-    "tmux",
-    "files/Pasted image 20241102173553.png",
-    "files/Pasted image 20241028160506.png",
-    "games/cocos-creator",
-    "files/Pasted image 20240808194548.png",
-    "files/Pasted image 20240721104905.png",
-    "files/Pasted image 20240721104313.png",
-    "files/Pasted image 20240721104246.png",
-    "files/Pasted image 20240721104207.png",
-    "design-patterns/structural (структурные)",
-    "design-patterns/creational (порождающие)",
-    "design-patterns/behavior (поведенческие)",
-    "design-patterns"
+    "files/Pasted image 20250121204932.png"
   ]
 }
