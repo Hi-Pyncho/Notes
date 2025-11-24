@@ -273,9 +273,6 @@ TRUNCATE TABLE table_name RESTART IDENTITY
 ALTER TABLE book
 ADD COLUMN price decimal CONSTRAINT CHK_book_price CHECK (price >= 0)
 
-
-
-
 --UPDATE
 UPDATE author
 SET full_name = 'Lias', rating = 5
