@@ -11,10 +11,14 @@
             "id": "29b195db0d885305",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "langs/Go/project_layout.md",
+                "mode": "preview",
+                "source": true
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "project_layout"
             }
           }
         ]
@@ -176,9 +180,11 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {},
+              "state": {
+                "file": "langs/Go/project_layout.md"
+              },
               "icon": "lucide-info",
-              "title": "File properties"
+              "title": "File properties for project_layout"
             }
           }
         ],
@@ -202,6 +208,8 @@
   },
   "active": "29b195db0d885305",
   "lastOpenFiles": [
+    "langs/Go/swagger.md~",
+    "langs/Go/swagger.md",
     "langs/Go/syntax/for_cycle.md",
     "langs/Go/syntax/for_cycle.md~",
     "langs/Go/commands.md",
@@ -229,9 +237,7 @@
     "langs/Go/runes.md~",
     "langs/Go/strings.md",
     "langs/Go/slicing.md",
-    "langs/Go/slices.md",
     "langs/Go/slices.md~",
-    "langs/Go/runes.md",
     "langs/Go/pointers.md~",
     "langs/Go/4913",
     "langs/Go/arrays.md~",
